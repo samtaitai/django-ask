@@ -1,0 +1,1 @@
+web: gunicorn djangopeing.wsgi --log-file -
