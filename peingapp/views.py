@@ -6,7 +6,7 @@ from .forms import QuestionForm, AnswerForm
 
 def index(request):
     questions = Question.objects.filter(pub_date__lte=timezone.now()).order_by('pub_date')
-    return render(request, 'peingapp/index.html', {'questions': questions})
+    return render(request, 'peingapp/index.html', {'questions': questions.reverse()})
 
 def new_question(request):
     if request.method == 'POST':
